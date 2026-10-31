@@ -1,0 +1,40 @@
+{
+  "name": "purple-potato",
+  "productName": "Purple Potato",
+  "version": "1.0.0",
+  "description": "Guitar fretboard mission control",
+  "main": "main.js",
+  "author": "Pankaj Kuli",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "com.purplepotato.app",
+    "productName": "Purple Potato",
+    "files": [
+      "main.js",
+      "index.html",
+      "icon.png"
+    ],
+    "mac": {
+      "category": "public.app-category.music",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Purple Potato uses the microphone for the chromatic tuner."
+      },
+      "icon": "icon.png"
+    }
+  }
+}
